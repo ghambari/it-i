@@ -1,0 +1,44 @@
+<h1>Devices</h1>
+<%= @current_time %>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Brand</th>
+    <th>Model</th>
+    <th>Serial number</th>
+    <th>Status</th>
+    <th>Purchase date</th>
+    <th>Department</th>
+    <th>Responsible</th>
+    <th>Date assign</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @devices.each do |device| %>
+  <tr>
+    <td><%= device.number %></td>
+    <td><%= device.name %></td>
+    <td><%= device.code %></td>
+    <td><%= device.brand %></td>
+    <td><%= device.model %></td>
+    <td><%= device.serial_number %></td>
+    <td><%= device.status %></td>
+    <td><%= device.purchase_date %></td>
+    <td><%= device.department %></td>
+    <td><%= device.responsible %></td>
+    <td><%= device.date_assign %></td>
+    <td><%= link_to 'Show', device %></td>
+    <td><%= link_to 'Edit', edit_device_path(device) %></td>
+    <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Device', new_device_path %>
